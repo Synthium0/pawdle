@@ -18,6 +18,8 @@ enum GameState {
   Lost,
 }
 
+let wins = 0
+
 interface GameProps {
   maxGuesses: number;
   hidden: boolean;
@@ -152,7 +154,27 @@ function Game(props: GameProps) {
       if (currentGuess === target) {
         setHint(gameOver("won"));
         setGameState(GameState.Won);
-        console.log("YOU WIN 10 PAW!!! WOOOOOO")
+
+        console.log("YOU WIN!!! WOOOOOO!!!")
+        
+        if (wins === 5){
+          let address = prompt("This is your last reward of the day! What's your paw address?")
+          console.log("TODO: Send paw to following address")
+          console.log(address)
+          wins = wins + 1
+        }
+        if (wins === 6){
+          alert("You've reached your daily reward limit!")
+        }
+        if (wins > 5){
+          let address = prompt("Congrats! You won! What's your paw address?")
+          console.log("TODO: Send paw to following address")
+          console.log(address)
+          wins = wins + 1
+        }
+        
+
+
       } else if (guesses.length + 1 === props.maxGuesses) {
         setHint(gameOver("lost"));
         setGameState(GameState.Lost);

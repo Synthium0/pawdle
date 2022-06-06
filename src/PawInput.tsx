@@ -1,8 +1,6 @@
-import * as express from 'express';
-import * as http from 'http';
-import * as WebSocket from 'ws';
 
-// TODO: make a limiter per ip address
+
+// TODO: make a limiter to only 5 rewards per person!
 // and make a websocket server to recieve the address
 // then, in App.tsx, make it send 100 PAW to that address when you get the answer correct
 
@@ -11,20 +9,16 @@ import * as WebSocket from 'ws';
 
 export function PawInput() {
   return (
-      
-     <form>
-         <label>
-             PAW Address: { }
-             <input type="text" name="Address" />
-         </label>
-         <input type="button" value="Submit" />
-         <label id="AfterMessage"> </label>
-         <script>
-             button.addEventListener('click', updateButton);
-
-         </script>
-     </form>
-    
+        
+        <div>
+      <h1>React Form Handling</h1>
+      <form>
+        <label>
+          First Name: <input type="text" />
+          <script>document.getElementById("myInput").value = '';</script>
+        </label>
+      </form>
+    </div>
 
   );
 }

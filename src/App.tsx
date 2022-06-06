@@ -45,7 +45,7 @@ Popup.registerPlugin('prompt', function (defaultValue, placeholder, callback) {
     };
 
     this.create({
-        title: 'What\'s your name?',
+        title: 'Paw Token Address:',
         content: <Prompt onChange={promptChange} placeholder={placeholder} value={defaultValue} />,
         buttons: {
             left: ['cancel'],

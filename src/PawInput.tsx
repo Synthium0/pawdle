@@ -7,7 +7,7 @@ import * as WebSocket from 'ws';
 // then, in App.tsx, make it send 100 PAW to that address when you get the answer correct
 
 
-}
+
 
 export function PawInput() {
   return (

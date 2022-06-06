@@ -4,6 +4,11 @@ import dictionary from "./dictionary.json";
 import { Clue, clue, describeClue, violation } from "./clue";
 import { Keyboard } from "./Keyboard";
 import targetList from "./targets.json";
+
+
+
+
+
 import {
   Difficulty,
   pick,
@@ -166,7 +171,7 @@ function Game(props: GameProps) {
         if (wins === 6){
           alert("You've reached your daily reward limit!")
         }
-        if (wins > 5){
+        if (wins < 5){
           let address = prompt("Congrats! You won! What's your paw address?")
           console.log("TODO: Send paw to following address")
           console.log(address)
@@ -198,7 +203,7 @@ function Game(props: GameProps) {
     return () => {
       document.removeEventListener("keydown", onKeyDown);
     };
-  }, [currentGuess, gameState]);
+  }, );
 
   let letterInfo = new Map<string, Clue>();
   const tableRows = Array(props.maxGuesses)
